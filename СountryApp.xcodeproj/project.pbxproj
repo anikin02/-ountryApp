@@ -11,6 +11,8 @@
 		78DEB5F42D026A3100843066 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DEB5F32D026A3100843066 /* ContentView.swift */; };
 		78DEB5F62D026A3300843066 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78DEB5F52D026A3300843066 /* Assets.xcassets */; };
 		78DEB5F92D026A3300843066 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78DEB5F82D026A3300843066 /* Preview Assets.xcassets */; };
+		78DEB6082D02887200843066 /* ListCountryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DEB6072D02887200843066 /* ListCountryView.swift */; };
+		78DEB60A2D02968800843066 /* LsitCountryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DEB6092D02968800843066 /* LsitCountryItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		78DEB5F32D026A3100843066 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		78DEB5F52D026A3300843066 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78DEB5F82D026A3300843066 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		78DEB6072D02887200843066 /* ListCountryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCountryView.swift; sourceTree = "<group>"; };
+		78DEB6092D02968800843066 /* LsitCountryItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LsitCountryItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,8 @@
 		78DEB6032D027FC800843066 /* ListCountryView */ = {
 			isa = PBXGroup;
 			children = (
+				78DEB6072D02887200843066 /* ListCountryView.swift */,
+				78DEB6092D02968800843066 /* LsitCountryItemView.swift */,
 			);
 			path = ListCountryView;
 			sourceTree = "<group>";
@@ -186,6 +192,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				78DEB5F42D026A3100843066 /* ContentView.swift in Sources */,
+				78DEB6082D02887200843066 /* ListCountryView.swift in Sources */,
+				78DEB60A2D02968800843066 /* LsitCountryItemView.swift in Sources */,
 				78DEB5F22D026A3100843066 /* _ountryAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
