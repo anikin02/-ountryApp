@@ -46,7 +46,7 @@ struct DetailsCountryView: View {
           }
       }
     }
-    .padding(20)
+    .padding(.horizontal, 20)
   }
 }
 
