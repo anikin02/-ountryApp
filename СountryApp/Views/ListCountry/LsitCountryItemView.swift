@@ -16,7 +16,7 @@ struct ListCountryItemView : View {
           .frame(width: 170, height: 85)
       }
       VStack{
-        Text("United Kingdom of Great Britain and Northern Ireland ")
+        Text("United Kingdom of Great Britain and Northern Ireland")
           .font(.system(size: 17, weight: .black))
           .multilineTextAlignment(.center)
         Text("Region: Europe")

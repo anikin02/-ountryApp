@@ -19,7 +19,7 @@ struct ListCountryView: View {
         ListCountryItemView()
       }
     }
-    .padding(20)
+    .padding(.horizontal, 20)
   }
 }
 
