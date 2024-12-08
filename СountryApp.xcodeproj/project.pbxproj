@@ -18,6 +18,7 @@
 		78DEB6102D054DEB00843066 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DEB60F2D054DEB00843066 /* Country.swift */; };
 		78DEB6122D05600000843066 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DEB6112D055FFF00843066 /* APIManager.swift */; };
 		78DEB6152D057D1700843066 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 78DEB6142D057D1700843066 /* Kingfisher */; };
+		78DEB6172D065F1900843066 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 78DEB6162D065F1900843066 /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		78DEB60D2D054D0A00843066 /* ListCountryModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCountryModelView.swift; sourceTree = "<group>"; };
 		78DEB60F2D054DEB00843066 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		78DEB6112D055FFF00843066 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		78DEB6162D065F1900843066 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				78DEB5F12D026A3100843066 /* _ountryAppApp.swift */,
 				78DEB5F52D026A3300843066 /* Assets.xcassets */,
 				78DEB5F72D026A3300843066 /* Preview Content */,
+				78DEB6162D065F1900843066 /* Localizable.xcstrings */,
 			);
 			path = "СountryApp";
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 78DEB5E52D026A3100843066;
 			packageReferences = (
@@ -201,6 +205,7 @@
 			files = (
 				78DEB5F92D026A3300843066 /* Preview Assets.xcassets in Resources */,
 				78DEB5F62D026A3300843066 /* Assets.xcassets in Resources */,
+				78DEB6172D065F1900843066 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

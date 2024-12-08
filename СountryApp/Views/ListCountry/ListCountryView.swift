@@ -16,7 +16,7 @@ struct ListCountryView: View {
       ScrollView() {
         VStack(spacing: 25) {
           ForEach(viewModel.searchCountries.count == 0 ? viewModel.allCountries : viewModel.searchCountries, id: \.name.official) { country in
-            NavigationLink(destination: DetailsCountryView()) {
+            NavigationLink(destination: DetailsCountryView(country: country)) {
               ListCountryItemView(country: country)
                 .tint(.primary)
                 .frame(maxWidth: .infinity, alignment: .leading)

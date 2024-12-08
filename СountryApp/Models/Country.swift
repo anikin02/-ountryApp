@@ -19,6 +19,48 @@ struct Country: Codable {
   let currencies: [String : Currency]?
   let timezones: [String]?
   let flags: Flag
+  
+  func getStringCurrency() -> String {
+    var result = String()
+    
+    if let currencies = currencies {
+      for item in currencies {
+        result += item.value.name + "(\(item.value.symbol))"
+      }
+    } else {
+      result = "-"
+    }
+    
+    return result
+  }
+  
+  func getStringLanguages() -> String {
+    var result = String()
+    
+    if let languages = languages {
+      for item in languages {
+        result += item.value + " "
+      }
+    } else {
+      result = "-"
+    }
+    
+    return result
+  }
+  
+  func getStringTimezones() -> String {
+    var result = String()
+    
+    if let timezones = timezones {
+      for item in timezones {
+        result += item + " "
+      }
+    } else {
+      result = "-"
+    }
+    
+    return result
+  }
 }
 
 struct LanguageName: Codable {
