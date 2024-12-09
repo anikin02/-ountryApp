@@ -6,36 +6,39 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ContentView: View {
+  @ObservedObject var favoriteModelView: FavoriteModelView
+  
+  init(modelContext: ModelContext) {
+    self.favoriteModelView = FavoriteModelView(modelContext: modelContext)
+  }
+  
   @State var selected = 1
   var body: some View {
     
     ZStack {
       TabView {
         ListCountryView()
+          .environmentObject(favoriteModelView)
           .tag(1)
           .tabItem {
             VStack {
               Image(systemName: "flag.fill")
               Text("Countries")
-                .font(.system(size: 30))
             }
           }
-        ListCountryView()
+        FavoriteView()
+          .environmentObject(favoriteModelView)
           .tag(2)
           .tabItem {
             VStack {
               Image(systemName: "hand.thumbsup.fill")
               Text("Favourites")
-                .font(.system(size: 30))
             }
           }
       }
     }
   }
-}
-
-#Preview {
-  ContentView()
 }

@@ -13,14 +13,21 @@ class ListCountryModelView: ObservableObject {
   
   @Published var searchText = String()
   
+  @Published var textAlert = String()
+  
   init() {
     loadCountries()
   }
   
   private func loadCountries() {
-    APIManager.shared.getCountries() { responce in
+    APIManager.shared.getCountries() { result in
       DispatchQueue.main.async {
-        self.allCountries = responce
+        switch result {
+        case .success(let countries):
+          self.allCountries = countries
+        case .failure(let error):
+          self.textAlert = error.localizedDescription
+        }
       }
     }
   }

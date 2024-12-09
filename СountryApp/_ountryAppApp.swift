@@ -6,12 +6,23 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct _ountryAppApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
+  let container: ModelContainer
+  var body: some Scene {
+    WindowGroup {
+      ContentView(modelContext: container.mainContext)
+        .modelContainer(container)
     }
+  }
+  
+  init() {
+    do {
+      container = try ModelContainer(for: FavoriteItem.self)
+    } catch {
+      fatalError("Failed to create ModelContainer for Movie.")
+    }
+  }
 }

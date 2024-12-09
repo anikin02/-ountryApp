@@ -22,7 +22,7 @@ struct ListCountryItemView : View {
           .frame(width: 170, height: 85)
       }
       VStack{
-        Text(country.name.official)
+        Text(country.getName())
           .font(.system(size: 17, weight: .black))
           .multilineTextAlignment(.center)
         Text("Region: \(country.region)")

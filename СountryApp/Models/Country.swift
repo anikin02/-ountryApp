@@ -20,6 +20,17 @@ struct Country: Codable {
   let timezones: [String]?
   let flags: Flag
   
+  func getName() -> String {
+    let currentLanguage = Locale.current.language.languageCode?.identifier ?? "en"
+    
+    switch currentLanguage {
+    case "ru":
+      return translations.rus.official
+    default:
+      return name.official
+    }
+  }
+  
   func getStringCurrency() -> String {
     var result = String()
     

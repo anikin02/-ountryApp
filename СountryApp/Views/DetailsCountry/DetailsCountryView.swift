@@ -11,8 +11,10 @@ import Kingfisher
 
 struct DetailsCountryView: View {
   @State private var mapPosition: MapCameraPosition = .automatic
-  let country: Country
+  @EnvironmentObject var favoriteModelView: FavoriteModelView
   
+  let country: Country
+
   var body: some View {
     ZStack {
       ScrollView {
@@ -25,7 +27,7 @@ struct DetailsCountryView: View {
             .aspectRatio(contentMode: .fit)
             .frame(maxWidth: .infinity)
           
-          Text(country.name.official)
+          Text(country.getName())
             .font(.system(size: 17, weight: .black))
             .multilineTextAlignment(.center)
         }
@@ -43,10 +45,10 @@ struct DetailsCountryView: View {
             .frame(height: 300)
             .onAppear() {
               DispatchQueue.main.async {
-                let coordinate = CLLocationCoordinate2D(latitude: 54.0,
-                                                        longitude: -2.0)
-                let coordinateSpan = MKCoordinateSpan(latitudeDelta: 8,
-                                                      longitudeDelta: 8)
+                let coordinate = CLLocationCoordinate2D(latitude: country.latlng.first ?? 0,
+                                                        longitude: country.latlng.last ?? 0)
+                let coordinateSpan = MKCoordinateSpan(latitudeDelta: 10,
+                                                      longitudeDelta: 10)
                 let coordinateRegion = MKCoordinateRegion(center: coordinate,
                                                           span: coordinateSpan)
                 mapPosition = .region(coordinateRegion)
@@ -57,11 +59,16 @@ struct DetailsCountryView: View {
       VStack() {
         HStack() {
           Button {
-            
+            if favoriteModelView.favoriteCountries.contains(where: {$0.country.name.official == country.name.official}) {
+              favoriteModelView.deleteFavoriteItem(country: country)
+            } else {
+              favoriteModelView.addFavoriteItem(country: country)
+            }
           } label: {
             Image(systemName: "hand.thumbsup.fill")
               .resizable()
               .frame(width: 50, height: 50)
+              .foregroundStyle(favoriteModelView.favoriteCountries.contains(where: {$0.country.name.official == country.name.official}) ? .accent : .gray)
           }
         }
         .frame(maxHeight: .infinity, alignment: .bottom)
