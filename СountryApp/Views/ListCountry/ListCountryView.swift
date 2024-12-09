@@ -15,20 +15,25 @@ struct ListCountryView: View {
   
   var body: some View {
     NavigationStack {
-      ScrollView() {
-        VStack(spacing: 25) {
-          ForEach(viewModel.searchCountries.count == 0 ? viewModel.allCountries : viewModel.searchCountries, id: \.name.official) { country in
-            NavigationLink(destination: DetailsCountryView(country: country).environmentObject(favoriteModelView)) {
-              ListCountryItemView(country: country)
-                .tint(.primary)
-                .frame(maxWidth: .infinity, alignment: .leading)
+      if viewModel.allCountries.isEmpty {
+        ProgressView()
+          .frame(maxWidth: .infinity, alignment: .center)
+      } else {
+        ScrollView() {
+          VStack(spacing: 25) {
+            ForEach(viewModel.searchCountries.count == 0 ? viewModel.allCountries : viewModel.searchCountries, id: \.name.official) { country in
+              NavigationLink(destination: DetailsCountryView(country: country).environmentObject(favoriteModelView)) {
+                ListCountryItemView(country: country)
+                  .tint(.primary)
+                  .frame(maxWidth: .infinity, alignment: .leading)
+              }
             }
           }
+          .frame(maxWidth: .infinity, alignment: .leading)
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
+        .scrollIndicators(.hidden)
+        .padding(.horizontal, 20)
       }
-      .scrollIndicators(.hidden)
-      .padding(.horizontal, 20)
     }
     .searchable(text: $viewModel.searchText)
     .onChange(of: viewModel.searchText) {
@@ -38,9 +43,9 @@ struct ListCountryView: View {
       showAlert.toggle()
     }
     .alert("Connection Issues", isPresented: $showAlert, actions: {
-        Button("OK", role: .cancel) { }
+      Button("OK", role: .cancel) { }
     }, message: {
-        Text(viewModel.textAlert)
+      Text(viewModel.textAlert)
     })
   }
 }
