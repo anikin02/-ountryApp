@@ -55,6 +55,10 @@ struct DetailsCountryView: View {
               }
             }
         }
+        HStack {
+          let shareText = "\(country.getName()). \(country.capital?.first ?? "-"). \(country.getStringCurrency())"
+          ShareLink(item: shareText)
+        }
       }
       VStack() {
         HStack() {
